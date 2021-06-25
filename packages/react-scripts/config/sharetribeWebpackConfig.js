@@ -20,7 +20,7 @@ const postcssPlugins = [
       flexbox: 'no-2009',
     },
     features: {
-      "custom-properties": false,
+      'custom-properties': false,
       'nesting-rules': true, // stage 0
       'custom-media-queries': true, // stage 1
     },
@@ -49,12 +49,13 @@ const checkConfigStructure = config => {
   const hasOutput = !!config.output;
   const hasOptimization = !!config.optimization;
 
-  const configStructureKnown = hasRules
-        && hasOneOf
-        && hasCssLoader
-        && hasPlugins
-        && hasOutput
-        && hasOptimization;
+  const configStructureKnown =
+    hasRules &&
+    hasOneOf &&
+    hasCssLoader &&
+    hasPlugins &&
+    hasOutput &&
+    hasOptimization;
 
   if (!configStructureKnown) {
     throw new Error(
@@ -82,7 +83,9 @@ const applySharetribeConfigs = (config, options) => {
     // Add custom externals as server doesn't need to bundle everything
     newConfig.externals = [
       '@loadable/component',
-      nodeExternals(), // Ignore all modules in node_modules folder
+      nodeExternals({
+        whitelist: [/\.css/],
+      }), // Ignore all modules in node_modules folder
     ];
 
     // Use a 'node' subdirectory for the server build

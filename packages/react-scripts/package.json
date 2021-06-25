@@ -1,10 +1,10 @@
 {
-  "name": "sharetribe-scripts",
+  "name": "ncoded-scripts",
   "version": "5.0.0",
   "description": "Fork of facebookincubator/create-react-app@4.0.0 with some additional features.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sharetribe/create-react-app.git",
+    "url": "https://github.com/ncoded-solutions/create-react-app.git",
     "directory": "packages/react-scripts"
   },
   "license": "MIT",
@@ -24,7 +24,7 @@
     "utils"
   ],
   "bin": {
-    "sharetribe-scripts": "./bin/react-scripts.js"
+    "ncoded-scripts": "./bin/react-scripts.js"
   },
   "types": "./lib/react-app.d.ts",
   "dependencies": {
